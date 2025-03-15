@@ -823,6 +823,133 @@ body {
     gap: 30px;
 }
 
+/* Top Navigation Bar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--tea-stain);
+    font-family: 'EB Garamond', serif;
+}
+
+/* Main Navigation Bar for Home Page */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--tea-stain);
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'EB Garamond', serif;
+}
+
+.nav-logo a {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.5rem;
+    color: var(--vermilion);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 600;
+}
+
+.nav-logo a:hover {
+    color: var(--imperial-blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: var(--ink-black);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--vermilion);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--tea-stain);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.breadcrumbs {
+    font-size: 1rem;
+    color: #666;
+}
+
+.breadcrumbs a {
+    color: var(--vermilion);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--imperial-blue);
+    text-decoration: underline;
+}
+
+.return-link a {
+    color: var(--imperial-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+}
+
+.return-link a:hover {
+    color: var(--vermilion);
+    border: 1px solid var(--tea-stain);
+    border-radius: 4px;
+    background-color: rgba(211, 177, 125, 0.1);
+}
+
+/* Return to Home Link at Bottom */
+.return-home {
+    text-align: center;
+    padding: 20px 0 40px;
+}
+
+.return-home a {
+    color: var(--imperial-blue);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    padding: 8px 15px;
+    border: 1px solid var(--tea-stain);
+    border-radius: 4px;
+}
+
+.return-home a:hover {
+    color: var(--vermilion);
+    background-color: rgba(211, 177, 125, 0.1);
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
 /* Responsive Styles */
 @media (max-width: 920px) {
     .scroll-container {
@@ -887,6 +1014,26 @@ body {
     .recipe-title h1 {
         font-size: 2.5rem;
     }
+    
+    .main-nav {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+    .nav-logo {
+        margin-bottom: 10px;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 15px 10px;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -925,5 +1072,14 @@ body {
     
     .dish-title .english {
         font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        gap: 10px 5px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 3px 5px;
     }
 } 
